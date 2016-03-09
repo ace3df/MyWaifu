@@ -76,7 +76,7 @@ def home_show():
                             str(twitch_username.lower()))
             flash("You can now use MyWaifu / MyHusbando on Twitch! "\
                   "Read the footer of the site to learn how to disconnect your accounts.")
-    return render_template('test.html')
+    return render_template('index.html')
 
 
 @app.route('/app-twitter')
