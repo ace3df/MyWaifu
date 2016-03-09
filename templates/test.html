@@ -1,0 +1,137 @@
+<head>
+  <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+  {{ JSGlue.include() }}
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@AcePictureBot">
+  <meta name="twitter:title" content="">
+  <!-- <meta name="twitter:description" content="Up than 200 characters."> -->
+  <meta name="twitter:creator" content="@AcePictureBot">
+  <meta name="twitter:image:src" content="">
+  <meta name="twitter:domain" content="http://mywaifu.acebot.xyz/">
+  <!-- END Twitter -->
+  <style>
+    select {
+      border: 1px solid #111;
+      background: transparent;
+      width: 150px;
+      padding: 5px 35px 5px 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      height: 34px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    .im-centered {
+      margin: auto;
+      max-width: 700px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+  <style>
+    html,
+    html a {
+      -webkit-font-smoothing: antialiased;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+    }
+
+    body {
+      position: relative;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 730px;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      height: 20px;
+      width: 100%;
+      background-color: #efefef;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="alert alert-warning" role="alert">If you know CSS and Javascript please help make this website good!
+      <br />Head on over to the <a href="https://github.com/ace3df/MyWaifu">Git repository</a>!</div>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+    <div class="alert alert-warning" role="alert">{{ message }}</div>
+    {% endfor %} {% else %}
+    <div class="row" style="padding-top: 10px;">
+      <div class="alert alert-info" role="alert">
+        <a href="/app-twitter">Connect your Twitter Waifu to Twitch!</a>
+        <p style="font-size: 10px;">To connect your waifu to Discord simply PM the bot with "myWaifu".</p>
+      </div>
+    </div>
+    {% endif %} {% endwith %}
+  </div>
+  <div class="container" style="padding-top: 10px;">
+    <div class="row">
+      <div class="col-md-4">
+        List:
+        <select id="pos_lists" class="form-control" style="padding: 0 2 3 4;">
+          <option value="Waifu">Waifu</option>
+          <option value="Husbando">Husbando</option>
+          <option value="OTP">One-True-Pairing</option>
+          <option value="Shipgirl">Shipgirl</option>
+          <option value="Touhou">Touhou</option>
+          <option value="Vocaloid">Vocaloid</option>
+          <option value="Imouto">Imouto</option>
+          <option value="Idol">Idol</option>
+          <option value="Sensei">Sensei</option>
+          <option value="Senpai">Senpai</option>
+          <option value="Kouhai">Kouhai</option>
+          <option value="Onee-chan">Onee-chan</option>
+          <option value="Onii-chan">Onii-chan</option>
+          <option value="Monstergirl">Monstergirl</option>
+          <option value="Witchgirl">Witchgirl</option>
+          <option value="Tankgirl">Tankgirl</option>
+          <option value="Shota">Shota</option>
+        </select>
+        <div id="optionalSettings" style="margin-top: 10px;"></div>
+        <button id="btnSubmit" class="form-control btn btn-info" style="margin-top: 10px;">Spin</button>
+        <div id="share" style="margin-top: 10px; margin-bottom: 20px">
+          <div id="shareText"></div>
+          <div id="shareTwitter"></div>
+        </div>
+        <hr>
+      </div>
+      <div class="col-md-6" style="margin: auto;">
+        <h4><div id="listType">Your Waifu is...</div></h4>
+        <h3><div id="result" style="align-items:center;">Press Spin to start!</div></h3>
+        <div id="fromshow" style="align-items:center;font-size: 14px;"></div>
+        <div id="img"></div>
+        <div id="artby" style="font-size: 14px; margin-top: 20px;"></div>
+        <div id="reportImage" style="font-size: 12px; margin-top: 5px;"></div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <hr>
+    <p style="font-size: 10px;">* Images change every month.</p>
+    <p style="font-size: 14px;">
+      To connect your waifu or husbando to Discord - PM the bot using the command "MyWaifu" for a tutorial.
+      <br />
+      <br /> It is pointless to keep Twitter and Twitch connected to the bot's system.
+      <br /> You can disconnect the app anytime here: <a href="https://twitter.com/settings/applications">Twitter</a> | <a href="https://secure.twitch.tv/settings/connections">Twitch</a>
+      <br /> This site doesn't store anything other than your Twitter ID and Twitch Username.
+    </p>
+    <p style="font-size: 14px;">Vist <a href="http://twitter.com/AcePictureBot">AcePictureBot</a> on Twitter for daily images or use over 10 commands!</p>
+    <p style="font-size: 14px;">Created by <a href="http://twitter.com/Ace3DF">@Ace3DF</a> with help of 100s of Google javascript searchs.</p>
+    <p>
+      <a href="#">Back to top</a>
+    </p>
+  </footer>
+</body>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='mywaifu.js') }}"></script>

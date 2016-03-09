@@ -1,0 +1,7 @@
+Flask
+flask_oauthlib
+flask_jsglue
+tweepy
+python-twitter
+requests
+requests-oauthlib
