@@ -12,8 +12,9 @@ Create a pull request when you've done something cool.
 
 Some stuff to follow:
 
-- Have "Connect your Twitter Waifu to Twitch!" on the bottom of the site above the footer.
 - Feel free to change the layout.
-- Have a share button close to the result that will include "Your LIST_NAME is WAIFU_NAME{% if include_series %} from SHOW_NAME{% endif %}!"
-- Have a footer in same way or another.
+- Minimize your css and remove unused elements.
+- Have "Connect your Twitter Waifu to Twitch!" on the bottom of the site above the footer.
+- Have a share button close to the result.
+- Have a footer in some way or another.
 - Disable the "spin" function/button until the list file has loaded as well as a 3 second cooldown each spin click.
