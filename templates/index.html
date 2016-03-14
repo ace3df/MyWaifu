@@ -48,12 +48,13 @@
     }
 
     .footer {
-      position: absolute;
-      bottom: 0;
-      height: 20px;
+      position: relative;
       width: 100%;
-      background-color: #efefef;
       text-align: center;
+      color: #707070;
+      position: relative;
+      font-size: small;
+      width:100%;
     }
   </style>
 </head>
@@ -62,16 +63,7 @@
   <div class="container">
     <div class="alert alert-warning" role="alert">If you know CSS and Javascript please help make this website good!
       <br />Head on over to the <a href="https://github.com/ace3df/MyWaifu">Git repository</a>!</div>
-    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
-    <div class="alert alert-warning" role="alert">{{ message }}</div>
-    {% endfor %} {% else %}
-    <div class="row" style="padding-top: 10px;">
-      <div class="alert alert-info" role="alert">
-        <a href="/app-twitter">Connect your Twitter Waifu to Twitch!</a>
-        <p style="font-size: 10px;">To connect your waifu to Discord simply PM the bot with "myWaifu".</p>
-      </div>
-    </div>
-    {% endif %} {% endwith %}
+
   </div>
   <div class="container" style="padding-top: 10px;">
     <div class="row">
@@ -100,7 +92,12 @@
         <button id="btnSubmit" class="form-control btn btn-info" style="margin-top: 10px;">Spin</button>
         <div id="share" style="margin-top: 10px; margin-bottom: 20px">
           <div id="shareText"></div>
-          <div id="shareTwitter"></div>
+          <div id="shareButtons" class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="http://mywaifu.acebot.xyz/" data-a2a-title="Example Page">
+              <a class="a2a_button_facebook"></a>
+              <a class="a2a_button_twitter"></a>
+              <a class="a2a_button_google_plus"></a>
+              <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+          </div>
         </div>
         <hr>
       </div>
@@ -113,24 +110,33 @@
         <div id="reportImage" style="font-size: 12px; margin-top: 5px;"></div>
       </div>
     </div>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+    <div class="alert alert-warning" role="alert">{{ message }}</div>
+    {% endfor %} {% else %}
+    <div class="row" style="padding-top: 10px;">
+      <div class="alert alert-info" role="alert">
+        <a href="/app-twitter">Connect your Twitter Waifu to Twitch!</a>
+        <p style="font-size: 10px;">To connect your waifu to Discord simply PM the bot with "MyWaifu".</p>
+      </div>
+    </div>
+    {% endif %} {% endwith %}
   </div>
   <footer class="footer">
     <hr>
     <p style="font-size: 10px;">* Images change every month.</p>
     <p style="font-size: 14px;">
-      To connect your waifu or husbando to Discord - PM the bot using the command "MyWaifu" for a tutorial.
-      <br />
-      <br /> It is pointless to keep Twitter and Twitch connected to the bot's system.
-      <br /> You can disconnect the app anytime here: <a href="https://twitter.com/settings/applications">Twitter</a> | <a href="https://secure.twitch.tv/settings/connections">Twitch</a>
+      You can disconnect the app anytime here: <a href="https://twitter.com/settings/applications">Twitter</a> | <a href="https://secure.twitch.tv/settings/connections">Twitch</a>
       <br /> This site doesn't store anything other than your Twitter ID and Twitch Username.
     </p>
-    <p style="font-size: 14px;">Vist <a href="http://twitter.com/AcePictureBot">AcePictureBot</a> on Twitter for daily images or use over 10 commands!</p>
-    <p style="font-size: 14px;">Created by <a href="http://twitter.com/Ace3DF">@Ace3DF</a> with help of 100s of Google javascript searchs.</p>
+    <p style="font-size: 14px;">Vist <a href="http://twitter.com/AcePictureBot">AcePictureBot</a> on Twitter for daily images or use over 10 commands!<br />
+      Created by <a href="http://twitter.com/Ace3DF">@Ace3DF</a> with help of 100s of Google javascript searchs.</p>
     <p>
-      <a href="#">Back to top</a>
+      <a style="font-size: 16px;" href="#">Back to top</a>
     </p>
   </footer>
 </body>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="{{ url_for('static', filename='mywaifu.js') }}"></script>
+
+<script async src="//static.addtoany.com/menu/page.js"></script>

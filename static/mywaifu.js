@@ -401,9 +401,7 @@ $(document).ready(function() {
       }
       $("#result").text(post_text);
       $("#shareText").text("Share your " + $("#pos_lists").find(":selected").text() + "!");
-      $('meta[name=\'twitter:title\']').attr('content', "My " + $("#pos_lists").find(":selected").text() + " is " + post_text + "! Find yours out here: http://mywaifu.acebot.xyz/");
-      //$('meta[name=\'twitter:image:src\']').attr('content', dataUri);
-      $("#shareTwitter").html("<a href=\"https://twitter.com/intent/tweet?text=My " + $("#pos_lists").find(":selected").text() + " is " + post_text + "! Find yours out here: http://mywaifu.acebot.xyz/\" data-size=\"large\">Tweet</a>")
+      $("#shareButtons").attr("data-a2a-title", "My " + $("#pos_lists").find(":selected").text() + " is " + post_text + "! Find yours out here: ")
       $("#artby").html("<a href=http://saucenao.com/search.php?urlify=1&url=" + loc + ">" + "Search for the artist source of this image!</a>");
       $("#reportImage").html("<a href=\"https://twitter.com/intent/tweet?text=@AceStatusBot The image for " + post_text + " is NSFW/wrong!\" data-size=\"large\">*Report this image for being NSFW or wrong!</a>")
       restoreHTML();

@@ -23,7 +23,7 @@ twitter = oauth.remote_app(
 
 app = Flask(__name__)
 jsglue = JSGlue(app)
-app.config['SESSION_TYPE'] = 'memcached'
+app.config['SESSION_TYPE'] = "memcached"
 app.config['SECRET_KEY'] = ""
 user_store = {}  # Only need this for local user
 
@@ -141,4 +141,4 @@ def twitch_oauth_authorized():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
